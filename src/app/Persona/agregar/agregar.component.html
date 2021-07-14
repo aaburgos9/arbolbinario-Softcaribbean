@@ -1,0 +1,30 @@
+<div class="container">
+  <form class="was-validated" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="validationNombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control"  formControlName="nombre" id="validationNombre" placeholder="nombre" required>
+
+    </div>
+    <div class="mb-3">
+      <label for="validationDocumento" class="form-label">Documento</label>
+      <input type="number" class="form-control is-invalid"formControlName="documento" id="validationDocumento"
+        placeholder="Documento" required>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="validationCorreo" class="form-label">Correo</label>
+      <input type="email" class="form-control is-invalid"formControlName="correo"  id="validationCorreo" placeholder="Correo" required>
+
+    </div>
+    <div class="mb-3">
+      <label for="validatiodireccion" class="form-label">Direccion</label>
+      <input type="text" class="form-control is-invalid" formControlName="direccion" id="validatiodireccion" placeholder="Direccion" required>
+
+    </div>
+
+    <div class="mb-3">
+      <button  class="btn btn-primary" type="submit" >Guardar</button>
+    </div>
+  </form>
+</div>

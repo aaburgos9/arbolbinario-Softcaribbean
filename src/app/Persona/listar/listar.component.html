@@ -1,0 +1,58 @@
+<div class="container">
+  <div style="margin-bottom: 10px;">
+    <form action="">
+      <div class="form-group col-3">
+        <label for="">Filtrar por documento:</label>
+        <input type="number" class="form-control" name="documento" [(ngModel)]="documento" />
+      </div>
+    </form>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <button (click)="ListarInOrden()" class="btn btn-success" style="margin-right: 15px;">
+      Listar inOrden
+    </button>
+
+    <button (click)="ListarPreOrden()" class="btn btn-success" style="margin-right: 15px;">
+      Listar preOrden
+    </button>
+
+    <button (click)="BuscarByDocumento()" class="btn btn-success" style="margin-right: 15px;">
+      Buscar por documento
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3>Personas</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Direccion</th>
+            <th>Fecha Creacion</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="" *ngFor="let cliente of clientes">
+            <td>{{ cliente.documento }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.correo }}</td>
+            <td>{{ cliente.direccion }}</td>
+            <td>{{ cliente.createAt }}</td>
+            <td>
+              <button class="btn btn-warning" (click)="Editar(cliente)">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
